@@ -27,7 +27,7 @@ function snow_cursor (node) {
     }
 
 
-    const blob = new Blob( [ getSVG(color) ], { type: 'image/svg+xml' } );
+    const blob = new Blob( [ getSVG() ], { type: 'image/svg+xml' } );
 
     const urli = window.URL.createObjectURL( blob );
 

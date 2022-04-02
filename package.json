@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build": "parcel build index.js",
     "serve": "parcel serve index.html"
   },
   "keywords": [],
