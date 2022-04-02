@@ -1,5 +1,6 @@
 function chrome_cursor (node) {
-    const color = node.getAttribute('cursor_color');
+    const outer_color = node.getAttribute('outer_color');
+    const inner_color = node.getAttribute('inner_color');
     const style = document.createElement('style');
 
     let css = `
@@ -15,15 +16,15 @@ function chrome_cursor (node) {
             <svg xmlns="http://www.w3.org/2000/svg"
                 height="30"
                 width="30"
-                fill="${color}"
+                fill="${inner_color}"
                 >
-                <circle class="outer-circle" cx="15" cy="15" r="12" stroke="green"
+                <circle class="outer-circle" cx="15" cy="15" r="12" stroke="${outer_color}"
                 stroke-width="2" fill-opacity="0.6"></circle>
             </svg>`;
     }
 
 
-    const blob = new Blob( [ getSVG(color) ], { type: 'image/svg+xml' } );
+    const blob = new Blob( [ getSVG() ], { type: 'image/svg+xml' } );
 
     const urli = window.URL.createObjectURL( blob );
 
